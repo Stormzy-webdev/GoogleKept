@@ -91,6 +91,10 @@ nav section {
     height: 22px;
 }
 
+body.dark .nav-icon {
+    filter: brightness(0) invert(1);
+}
+
 .keep-logo {
     margin-right: 2px;
 }
@@ -115,6 +119,10 @@ nav section {
     height: 18px;
     opacity: 0.8;
     margin-right: 8px;
+}
+
+body.dark #search-icon {
+    filter: brightness(0) invert(1);
 }
 
 #search {
@@ -153,6 +161,10 @@ aside {
 .side-button img {
     width: 20px;
     height: 20px;
+}
+
+body.dark .side-button img {
+    filter: brightness(0) invert(1);
 }
 
 .side-button.active {
