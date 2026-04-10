@@ -425,7 +425,43 @@ main {
         display: none;
     }
 
+    nav {
+        padding: 8px 10px;
+    }
+
+    .nav-left {
+        flex: 1;
+        gap: 8px;
+    }
+
+    .nav-right {
+        gap: 8px;
+    }
+
+    .search-box {
+        flex: 1;
+        margin-left: 0;
+    }
+
     #search {
-        width: 180px;
+        width: 100%;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .note-creator {
+        max-width: 100%;
+        padding: 10px 12px;
+    }
+
+    .note-actions {
+        justify-content: space-between;
+    }
+
+    .note-list {
+        column-count: 1;
+        column-gap: 0;
     }
 }
