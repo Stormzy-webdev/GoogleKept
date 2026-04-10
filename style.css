@@ -276,6 +276,14 @@ main {
     border-radius: 4px;
 }
 
+.note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
 .note-list {
     margin-top: 24px;
     display: grid;
