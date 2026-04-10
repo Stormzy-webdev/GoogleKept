@@ -284,6 +284,31 @@ main {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
     overflow-wrap: anywhere;
     word-break: break-word;
+    position: relative;
+}
+
+.note-delete {
+    margin-top: 10px;
+    border: none;
+    background: var(--hover);
+    color: var(--muted);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.note-delete:hover {
+    background: var(--border);
+}
+
+.note:hover .note-delete,
+.note:focus-within .note-delete {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .note-list {

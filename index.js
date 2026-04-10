@@ -35,12 +35,19 @@ function createNote(title, note) {
     let container = document.createElement('div');
     let titleElement = document.createElement('h2');
     let noteElement = document.createElement('p');
+    let deleteButton = document.createElement('button');
 
     titleElement.textContent = title;
     noteElement.textContent = note;
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "note-delete";
+    deleteButton.addEventListener("click", () => {
+        container.remove();
+    });
 
     container.appendChild(titleElement);
     container.appendChild(noteElement);
+    container.appendChild(deleteButton);
     container.className = "note";
     return container;
 }
