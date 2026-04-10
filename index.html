@@ -100,6 +100,16 @@
            <div class="note-actions">
                <button id="close-note">Close</button>
            </div>
+
+           <!-- Color Picker Icon -->
+           <div class="color-picker">
+               <button class="palette-button" id="palette-toggle" type="button" aria-label="Choose background color">
+                   <span class="material-symbols-outlined" aria-hidden="true">palette</span>
+               </button>
+               <div class="color-popover" id="color-popover" aria-hidden="true">
+                   <input type="color" id="background-color" aria-label="Background color" />
+               </div>
+           </div>
        </section>
        
        <section id="note-list" class="note-list"></section>

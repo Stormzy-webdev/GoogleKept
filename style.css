@@ -152,7 +152,6 @@ main {
 }
 
 .note-creator {
-    align-items: center;
     max-width: 640px;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -163,7 +162,8 @@ main {
 }
 
 .note-creator.collapsed #title,
-.note-creator.collapsed .note-actions {
+.note-creator.collapsed .note-actions,
+.note-creator.collapsed .color-picker {
     display: none;
 }
 
@@ -173,6 +173,69 @@ main {
 
 .note-creator.expanded #note {
     min-height: 80px;
+}
+
+.color-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    color: var(--muted);
+    position: relative;
+}
+
+.palette-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.palette-button:hover {
+    background: var(--hover);
+}
+
+.color-popover {
+    position: absolute;
+    top: 40px;
+    left: -4px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    display: none;
+}
+
+.color-popover.open {
+    display: block;
+}
+
+.color-popover input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 0;
+    cursor: pointer;
+}
+
+.color-popover input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-popover input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 5px;
 }
 
 #title {
