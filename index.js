@@ -7,6 +7,8 @@ const noteInput = document.getElementById("note");
 const closeButton = document.getElementById("close-note");
 const paletteToggle = document.getElementById("palette-toggle");
 const colorPopover = document.getElementById("color-popover");
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector(".material-symbols-outlined");
 
 function expandCreator() {
     noteCreator.classList.add("expanded");
@@ -96,4 +98,11 @@ document.addEventListener("click", (event) => {
     if (!noteCreator.contains(event.target) && !noteCreator.classList.contains("collapsed")) {
         finalizeAndCollapse();
     }
+});
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    themeIcon.textContent = isDark ? "light_mode" : "dark_mode";
+    themeToggle.setAttribute("aria-label", isDark ? "Toggle light mode" : "Toggle dark mode");
 });
