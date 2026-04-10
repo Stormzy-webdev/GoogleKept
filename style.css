@@ -344,18 +344,58 @@ main {
     background: var(--border);
 }
 
+.note-pin {
+    margin-top: 10px;
+    margin-right: 8px;
+    border: none;
+    background: var(--hover);
+    color: var(--muted);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.note-pin:hover {
+    background: var(--border);
+}
+
 .note:hover .note-delete,
-.note:focus-within .note-delete {
+.note:hover .note-pin,
+.note:focus-within .note-delete,
+.note:focus-within .note-pin {
     opacity: 1;
     pointer-events: auto;
 }
 
+.note.pinned {
+    border-color: var(--accent);
+}
+
 .note-list {
     margin-top: 24px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-    align-items: start;
+    column-count: 4;
+    column-gap: 16px;
+}
+
+.note {
+    break-inside: avoid;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1100px) {
+    .note-list {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 900px) {
+    .note-list {
+        column-count: 2;
+    }
 }
 
 @media (max-width: 900px) {

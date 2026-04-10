@@ -40,6 +40,7 @@ function createNote(title, note) {
     let titleElement = document.createElement('h2');
     let noteElement = document.createElement('p');
     let deleteButton = document.createElement('button');
+    let pinButton = document.createElement('button');
 
     titleElement.textContent = title;
     noteElement.textContent = note;
@@ -47,6 +48,18 @@ function createNote(title, note) {
     deleteButton.className = "note-delete";
     deleteButton.addEventListener("click", () => {
         container.remove();
+    });
+    pinButton.textContent = "Pin";
+    pinButton.className = "note-pin";
+    pinButton.addEventListener("click", () => {
+        const noteList = document.getElementById("note-list");
+        const isPinned = container.classList.toggle("pinned");
+        pinButton.textContent = isPinned ? "Unpin" : "Pin";
+        if (isPinned) {
+            noteList.prepend(container);
+        } else {
+            noteList.appendChild(container);
+        }
     });
 
     if (hasCustomColor && colorInput.value) {
@@ -56,6 +69,7 @@ function createNote(title, note) {
 
     container.appendChild(titleElement);
     container.appendChild(noteElement);
+    container.appendChild(pinButton);
     container.appendChild(deleteButton);
     container.className = "note";
     return container;
