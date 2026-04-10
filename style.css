@@ -1,6 +1,6 @@
 :root {
     --bg: #f6f8fc;
-    --surface: #ffffff;
+    --surface: #ffffff; 
     --text: #202124;
     --muted: #5f6368;
     --border: #e0e0e0;
@@ -238,7 +238,7 @@ main {
 
 .color-popover {
     position: absolute;
-    top: 40px;
+    bottom: 40px;
     left: -4px;
     padding: 6px;
     background: var(--surface);
