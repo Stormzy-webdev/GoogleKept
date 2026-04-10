@@ -282,6 +282,8 @@ main {
     border-radius: 8px;
     padding: 12px 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .note-list {
@@ -289,6 +291,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 16px;
+    align-items: start;
 }
 
 @media (max-width: 900px) {
